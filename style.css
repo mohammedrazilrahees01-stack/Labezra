@@ -1,0 +1,795 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    cursor: none; /* Hides the default cursor */
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+    background-color: black;
+    color: #e7e7e7;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/*GRADIENT AND LAYER BLUR EFFECT*/
+.image-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.layer-blur {
+    position: absolute;
+    top: 20%;
+    width: 30rem;
+    height: 0;
+    right: 0;
+    box-shadow: 0 0 700PX 15PX white;
+    rotate: -30deg;
+    z-index: -1;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ▼▼ THIS IS THE CONTAINER FOR THE ROBOT ▼▼ */
+.hero-container {
+    position: relative; /* This contains the absolute-positioned robot */
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem clamp(1.5rem, 5vw, 5rem);
+    position: relative;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-left: -5%;
+}
+
+nav a {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    transition: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+nav a:hover {
+    color: #a7a7a7;
+}
+
+/* ▼▼ OLD .btn-signing DELETED ▼▼ */
+
+
+/* MAIN CONTENT */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(90vh - 6rem);
+    margin-bottom: 5rem; 
+}
+
+.content {
+    max-width: 40rem;
+    margin-left: 5rem;
+    position: relative; 
+    z-index: 1; 
+}
+
+.content1 {
+    position: relative; 
+    z-index: 999; 
+    border-top: none;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.8) 20%,
+            rgba(0, 0, 0, 0.8) 80%,
+            transparent 100%);
+    color: white;
+    padding: 40px;
+    max-width: 80rem;
+    margin: 5rem auto;
+}
+
+.content1>div {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.left-section-1 {
+    flex: 1;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.3;
+}
+
+.right-section-1 {
+    flex: 2;
+}
+
+.container2 {
+    background: black;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 0 2rem;
+}
+
+.tag-box {
+    position: relative;
+    width: 18rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    background: linear-gradient(to right, #656565,
+            #7f43a7, #6600c5, #5300a0, #757575, #656565);
+    background-size: 200%;
+    animation: animationGradient 2.5s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes animationGradient {
+    to {
+        background-position: 200%;
+    }
+}
+
+.tag-box .tag {
+    position: absolute;
+    inset: 3px 3px 3px 3px;
+    background-color: black;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.tag-box .tag:hover {
+    color: #5300a0;
+}
+
+.content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin: 2rem 0;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+    font-weight: bolder;
+}
+
+.content1 h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin: 2rem 0;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+        sans-serif;
+    font-weight: bolder;
+}
+
+.description {
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
+    max-width: 35rem;
+    color: gray;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+    margin-left: 9%;
+    position: relative; 
+    z-index: 1000; 
+}
+
+/* ▼▼ OLD .btn-get-started & .btn-signing-main DELETED ▼▼ */
+
+
+/* --- ROBOT CLASS --- */
+.robot-3d {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: -20%;
+    scale: 1.3; /* CSS controls the size */
+    
+    /* ▼▼ THIS IS THE FIX ▼▼ */
+    /* This stops the robot from stretching */
+    width: 100%;
+    height: 100vh; /* Sets height to screen height */
+    
+    z-index: 999; 
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Set initial opacity to 0 for fade-in */
+}
+
+/* RESPONSIVE STYLES */
+
+@media (max-width: 1300px) {
+    main {
+        align-items: center;
+        text-align: center;
+    }
+    header {
+        padding: 1rem 2rem;
+    }
+    .content {
+        margin-top: 30rem;
+        margin-left: 0;
+        z-index: 998;
+    }
+    .content1 {
+        margin-top: 5rem;
+        margin-left: 0;
+        z-index: 999;
+    }
+    .buttons {
+        margin-left: 0;
+        justify-content: center;
+    }
+    .robot-3d {
+        scale: 0.8; /* CSS controls the size */
+        top: -10vh;
+        right: -50%;
+        z-index: 997; 
+        
+        /* ▼▼ Make sure height is correct on responsive ▼▼ */
+        height: 100vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    .content {
+        margin-top: 28rem;
+        z-index: 998;
+    }
+
+    .content1 {
+        margin-top: 5rem;
+        margin-left: 0;
+        z-index: 999;
+    }
+    .robot-3d {
+        scale: 0.7; /* CSS controls the size */
+        top: -8vh;
+        right: -60%;
+        z-index: 997; 
+        
+        /* ▼▼ Make sure height is correct on responsive ▼▼ */
+        height: 100vh;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+    nav {
+        display: none;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    /* ▼▼ OLD .btn-signing DELETED ▼▼ */
+    .content {
+        margin-top: 5rem;
+        max-width: 90vw;
+        margin-left: 0;
+        z-index: 999;
+    }
+    .content1 {
+        margin-top: 5rem;
+        max-width: 90vw;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px;
+    }
+    .content1>div {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .tag-box {
+        margin: 0 auto;
+        width: 12rem;
+    }
+    .description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .robot-3d {
+        scale: 0.8; /* CSS controls the size */
+        top: -12vh;
+        left: 50%;
+        right: auto;
+        width: 100vw;
+        z-index: 998; 
+        border-left: none;
+        
+        /* ▼▼ Make sure height is correct on responsive ▼▼ */
+        height: 100vh;
+    }
+    /* ▼▼ OLD .btn-get-started & .btn-signing-main DELETED ▼▼ */
+}
+
+
+/* --- ▼▼ NEW CODE (Leg Fade, Carousel, Video, Footer) ▼▼ --- */
+
+/* --- ROBOT FADE FOR LEGS --- */
+.robot-3d::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* Covers bottom half */
+    background: linear-gradient(to top, 
+        black 30%, 
+        rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 10; 
+    pointer-events: none; 
+}
+
+/* --- CAROUSEL CSS (BIGGER & SPACED OUT) --- */
+
+.carousel {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-family: Arial;
+    margin-top: 5rem;
+    padding: 3rem 0;
+    position: relative;
+    z-index: 999; 
+}
+
+.carousel__list {
+    display: flex;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 400px; 
+    justify-content: center;
+    perspective: 300px;
+    padding: 0;
+}
+
+.carousel__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0px; /* Hides numbers */
+    width: 250px;
+    height: 350px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+    position: absolute;
+    transition: all .3s ease-in;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.carousel__item:nth-child(1) {
+    background: linear-gradient(45deg, #2D35EB 0%, #904ED4 100%);
+    background-image: url('./images/your-image-1.jpg'); /* Add your image */
+}
+
+.carousel__item:nth-child(2) {
+    background: linear-gradient(45deg, #2D35EB 0%, #fdbb2d 100%);
+    background-image: url('./images/your-image-2.jpg'); /* Add your image */
+}
+
+.carousel__item:nth-child(3) {
+    background: linear-gradient(45deg, #2D35EB 0%, #22c1c3 100%);
+    background-image: url('./images/your-image-3.jpg'); /* Add your image */
+}
+
+.carousel__item:nth-child(4) {
+    background: linear-gradient(45deg, #fdbb2d 0%, #904ED4 100%);
+    background-image: url('./images/your-image-4.jpg'); /* Add your image */
+}
+
+.carousel__item:nth-child(5) {
+    background: linear-gradient(45deg, #22c1c3 0%, #904ED4 100%);
+    background-image: url('./images/your-image-5.jpg'); /* Add your image */
+}
+
+.carousel__item[data-pos="0"] {
+    z-index: 5;
+}
+
+.carousel__item[data-pos="-1"],
+.carousel__item[data-pos="1"] {
+    opacity: 0.7;
+    filter: blur(1px) grayscale(10%);
+}
+
+.carousel__item[data-pos="-1"] {
+    transform: translateX(-35%) scale(.9);
+    z-index: 4;
+}
+
+.carousel__item[data-pos="1"] {
+    transform: translateX(35%) scale(.9);
+    z-index: 4;
+}
+
+.carousel__item[data-pos="-2"],
+.carousel__item[data-pos="2"] {
+    opacity: 0.4;
+    filter: blur(3px) grayscale(20%);
+}
+
+.carousel__item[data-pos="-2"] {
+    transform: translateX(-60%) scale(.8);
+    z-index: 3;
+}
+
+.carousel__item[data-pos="2"] {
+    transform: translateX(60%) scale(.8);
+    z-index: 3;
+}
+
+
+/* --- VIDEO SECTION STYLES --- */
+
+.video-section {
+    padding: 5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo-video {
+    width: 100%;
+    max-width: 1200px; 
+    border-radius: 12px; 
+    /* box-shadow removed */
+}
+
+/* --- FOOTER STYLES --- */
+
+.site-footer {
+    position: relative;
+    padding: 5rem 2rem 3rem 2rem; 
+    color: #e7e7e7;
+    background-image: url('./images/your-earth-image.jpg');
+    background-color: #05051a; 
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.site-footer .footer-overlay {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+}
+
+.site-footer .footer-container {
+    position: relative; 
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-footer .footer-column {
+    flex: 1;
+    min-width: 220px;
+}
+
+.site-footer h3 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.site-footer .footer-column p {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.site-footer .footer-column a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.site-footer .footer-column a:hover {
+    color: white;
+}
+
+.site-footer .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.site-footer .icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    color: #ccc;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.site-footer .icon-circle:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+}
+
+.site-footer .copyright {
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.site-footer .footer-form label {
+    display: block;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.site-footer .footer-form input[type="email"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* ▼▼ FOOTER BUTTON EDITED TO BE GLASSY ▼▼ */
+.site-footer .footer-form button {
+    /* Kept original layout styles */
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+    
+    /* Added Glass Styles */
+    display: inline-block;
+    padding: 0.8rem; /* Kept original padding */
+    text-decoration: none;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px; /* Kept original border-radius */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.site-footer .footer-form button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02); /* Made hover effect more subtle */
+}
+
+.site-footer .footer-bottom-logo {
+    position: absolute;
+    z-index: 2;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #aaa;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive styles for footer */
+@media (max-width: 768px) {
+    .site-footer .footer-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .site-footer .footer-bottom-logo {
+        position: relative;
+        transform: none;
+        left: auto;
+        text-align: center;
+        margin-top: 3rem;
+        bottom: auto;
+    }
+}
+
+/* --- ▼▼ NEW GLASS BUTTON STYLES ▼▼ --- */
+/* For Header and Main Content buttons */
+.glass-button {
+    /* Basic layout */
+    display: inline-block;
+    padding: 0.8rem 2rem; /* Matched your old .btn-signing */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem; /* Matched your old .btn-signing */
+    
+    /* The Glass Effect */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px; /* Matched your old buttons */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Text & Shadow */
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    
+    /* Hover Effect */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.glass-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05); 
+}
+/* --- ▼▼ NEW DOT & CHASER CURSOR ▼▼ --- */
+
+.cursor-dot {
+    position: fixed;
+    top: -10px; /* Offset to center */
+    left: -10px; /* Offset to center */
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 50000;
+    pointer-events: none;
+
+    /* This keeps its movement instant */
+    transition: transform 0.1s ease-out; 
+}
+
+.cursor-chaser {
+    position: fixed;
+    top: -20px; /* Offset to center */
+    left: -20px; /* Offset to center */
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    z-index: 50000;
+    pointer-events: none;
+
+    /* This creates the "chase" or "lag" effect */
+    transition: transform 0.2s ease-out; 
+}
+
+/* Optional: Hide the custom cursor on mobile */
+@media (max-width: 768px) {
+    body {
+        cursor: auto; /* Bring back the default cursor on mobile */
+    }
+    .cursor-dot, .cursor-chaser {
+        display: none;
+    }
+}
+
+/* --- ▼▼ LOADING SCREEN STYLES ▼▼ --- */
+
+.preloader {
+    position: fixed;
+    inset: 0; /* (top: 0, left: 0, right: 0, bottom: 0) */
+    z-index: 100000;
+    
+    /* The blurred background */
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Centering the content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* This makes it fade out smoothly */
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+/* Hides the loader after it's done */
+.preloader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Lets you click the page underneath */
+}
+
+.loader-text {
+    color: white;
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.loader-bar-container {
+    width: 300px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden; /* Hides the part of the bar that's outside */
+}
+
+.loader-bar {
+    width: 0%;
+    height: 100%;
+    background: white;
+    border-radius: 4px;
+    
+    /* This is the loading animation */
+    /* It takes 2s to run, but the JS will wait for the page to load */
+    animation: load-animation 2s ease-out forwards;
+}
+
+@keyframes load-animation {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
