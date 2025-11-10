@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | LabEzra Technologies</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="login.css">
+    
+    <link rel="stylesheet" href="docs.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="loader-text">
+            <span>L</span><span>O</span><span>A</span><span>D</span><span>I</span><span>N</span><span>G</span><span>.</span><span>.</span><span>.</span>
+        </div>
+        <div class="loader-bar-container">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-chaser"></div>
+    <img class="image-gradient" src="./images/gradient.png" alt="gradient">
+    <div class="layer-blur"></div>
+
+    <div class="docs-container">
+        <header class="docs-header">
+            <h1>LabEzra Documentation</h1>
+            <a href="index.html" class="glass-button">← Back to Home</a>
+        </header>
+
+        <main class="docs-content">
+            <div class="docs-box">
+                <h2>Get Started</h2>
+                <p>Welcome to the documentation. Here you will find guides and resources for our services and products.</p>
+                <p>This section provides a brief overview of how to integrate our core services.</p>
+
+                <h3>Core Services</h3>
+                <p>Our services are divided into three main categories:</p>
+                <ul>
+                    <li><b>IT Solutions:</b> Managed network infrastructure, cloud deployment, and IT support.</li>
+                    <li><b>ELV Systems:</b> Building management, access control, and structured cabling.</li>
+                    <li><b>Security:</b> Advanced CCTV surveillance, intrusion detection, and security consulting.</li>
+                </ul>
+
+                <h3>API Integration (Example)</h3>
+                <p>To use our client portal API, you first need to authenticate using your provided API key.</p>
+                <pre class="code-block">
+POST /v1/auth/token
+Host: api.labezra.com
+Content-Type: application/json
+x-api-key: YOUR_API_KEY_HERE
+                </pre>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorChaser = document.querySelector('.cursor-chaser');
+        const initialX = window.innerWidth / 2;
+        const initialY = window.innerHeight / 2;
+        cursorDot.style.transform = `translate(${initialX}px, ${initialY}px)`;
+        cursorChaser.style.transform = `translate(${initialX}px, ${initialY}px)`;
+        window.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            cursorDot.style.transform = `translate(${x}px, ${y}px)`;
+            cursorChaser.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    </script>
+    
+    <script>
+        window.onload = () => {
+            const preloader = document.querySelector('.preloader');
+            const loaderBar = document.querySelector('.loader-bar'); 
+            loaderBar.classList.add('animate'); 
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 3000); // 3-second delay
+        };
+    </script>
+</body>
+</html>

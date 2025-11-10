@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | LabEzra Technologies</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-chaser"></div>
+    <img class="image-gradient" src="./images/gradient.png" alt="gradient">
+    <div class="layer-blur"></div>
+
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Create Account</h2>
+            <p>Join LabEzra to get started.</p>
+            
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            
+            <button type="submit" class="glass-button">Register</button>
+            
+            <div class="login-footer">
+                <a href="login.html">Already have an account? Sign In</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorChaser = document.querySelector('.cursor-chaser');
+        window.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
+            cursorDot.style.transform = `translate(${x}px, ${y}px)`;
+            cursorChaser.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    </script>
+</body>
+</html>
